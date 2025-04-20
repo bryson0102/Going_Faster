@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#define N 4096
 void dgemm(int n, double* A, double* B, double* C)
 {
     for (int i = 0; i < n; ++i)
@@ -27,7 +27,7 @@ void dgemm(int n, double* A, double* B, double* C)
 //         }
 // }
 int main() {
-    int n = 4;  // Size of the matrix (must be a multiple of 8 for AVX-256)
+    int n = N;  // Size of the matrix (must be a multiple of 8 for AVX-256)
     double *A = (double *)malloc(n * n * sizeof(double));
     double *B = (double *)malloc(n * n * sizeof(double));
     double *C = (double *)malloc(n * n * sizeof(double));
